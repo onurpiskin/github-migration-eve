@@ -1,33 +1,45 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { CalendarBlank, Clock, MapPin, ChatsCircle } from '@phosphor-icons/react'
+import { CalendarBlank, Clock, MapPin, Users } from '@phosphor-icons/react'
 import { Card } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 const details = [
   {
     icon: CalendarBlank,
     label: 'Date',
-    value: 'June 9, 2026'
+    value: 'June 9, 2026',
+    color: 'text-accent'
   },
   {
     icon: Clock,
     label: 'Time',
     value: '12:30 – 17:00',
-    subtitle: 'Doors open at 12:00'
+    subtitle: 'Doors open at 12:00',
+    color: 'text-secondary'
   },
   {
     icon: MapPin,
     label: 'Location',
     value: 'Microsoft Köln',
-    subtitle: 'Holzmarkt 2, 50676 Köln, Germany'
+    subtitle: 'Holzmarkt 2, 50676 Köln, Germany',
+    color: 'text-accent'
   },
   {
-    icon: ChatsCircle,
+    icon: Users,
     label: 'Format',
     value: 'In-Person Event',
-    subtitle: 'Talks, Demos, Q&A, Networking'
+    subtitle: 'Interactive & Collaborative',
+    color: 'text-secondary'
   }
+]
+
+const formats = [
+  'Vision Talks',
+  'Live Demos',
+  'Strategy Sessions',
+  'Q&A',
+  'Networking'
 ]
 
 export default function EventDetails() {
@@ -35,44 +47,65 @@ export default function EventDetails() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="details" className="py-20 md:py-32 bg-muted/30" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section 
+      id="details" 
+      className="relative py-24 md:py-36 overflow-hidden"
+      ref={ref}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/30" />
+      
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, currentColor 35px, currentColor 36px),
+                         repeating-linear-gradient(-45deg, transparent, transparent 35px, currentColor 35px, currentColor 36px)`
+      }} />
+
+      <div className="container relative mx-auto px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-20"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-5 tracking-tight">
             Event Details
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
             A full afternoon of technical deep-dives, live demonstrations, and expert insights
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 max-w-7xl mx-auto mb-16">
           {details.map((detail, index) => {
             const Icon = detail.icon
             return (
               <motion.div
                 key={detail.label}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.12,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
               >
-                <Card className="p-6 h-full hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-secondary" weight="duotone" />
+                <Card className="group relative p-8 h-full bg-card/80 backdrop-blur-sm border-border/60 hover:border-border transition-all duration-300 hover:shadow-xl hover:shadow-accent/5">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent/60 via-secondary/60 to-accent/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-lg" />
+                  
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br from-accent/10 to-secondary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon size={28} className={detail.color} weight="duotone" />
                   </div>
-                  <div className="text-sm font-medium text-muted-foreground mb-2">
+                  
+                  <div className="text-xs font-semibold text-muted-foreground/70 uppercase tracking-wider mb-3 letter-spacing-wide">
                     {detail.label}
                   </div>
-                  <div className="text-lg font-semibold mb-1">
+                  
+                  <div className="text-xl md:text-2xl font-bold mb-2 text-foreground leading-tight">
                     {detail.value}
                   </div>
+                  
                   {detail.subtitle && (
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground/70 leading-relaxed">
                       {detail.subtitle}
                     </div>
                   )}
@@ -83,17 +116,54 @@ export default function EventDetails() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 text-center"
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="max-w-4xl mx-auto"
         >
-          <div className="inline-flex flex-wrap gap-3 justify-center">
-            <Badge variant="secondary" className="px-4 py-2 text-sm">Vision Talks</Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">Live Demos</Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">Strategy Sessions</Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">Q&A</Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">Networking</Badge>
+          <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-border/60 p-8 md:p-10">
+            <h3 className="text-xl md:text-2xl font-bold mb-6 text-center">
+              What to Expect
+            </h3>
+            
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              {formats.map((format, index) => (
+                <motion.div
+                  key={format}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ 
+                    duration: 0.4, 
+                    delay: 0.6 + (index * 0.08),
+                    ease: [0.22, 1, 0.36, 1]
+                  }}
+                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                >
+                  <div className="px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/10 to-secondary/10 border border-accent/20 text-sm font-medium text-foreground/90 hover:border-accent/40 hover:shadow-md hover:shadow-accent/10 transition-all duration-300">
+                    {format}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                onClick={() => window.open('https://forms.office.com/Pages/DesignPageV2.aspx?origin=RevampFRE&subpage=design&id=v4j5cvGGr0GRqy180BHbR7-_Ey3GyI1GgFpm0Eq6nfVUN0xWRjdDRVc5WjlEMUw0RkRYWkpERjVVUC4u&topview=Prefill', '_blank', 'noopener,noreferrer')}
+              >
+                Register Now
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="rounded-full px-8 py-6 text-base font-semibold border-2 hover:bg-accent/5 transition-all duration-300 hover:scale-105"
+                onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
+              >
+                View Full Agenda
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>
