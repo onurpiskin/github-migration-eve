@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
 import florianWagnerImg from '@/assets/images/florian-wagner.jpg'
+import timoGrunewaldImg from '@/assets/images/timo-grunewald.jpg'
 
 const speakers = [
   {
@@ -20,7 +21,8 @@ const speakers = [
     role: 'Solution Engineer',
     company: 'GitHub',
     initials: 'TG',
-    color: 'bg-accent/20'
+    color: 'bg-accent/20',
+    image: timoGrunewaldImg
   },
   {
     name: 'Till Spindler',
