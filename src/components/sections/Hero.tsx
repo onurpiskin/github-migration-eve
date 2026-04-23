@@ -2,12 +2,15 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from '@phosphor-icons/react'
 import ShareEvent from '@/components/ShareEvent'
+import CountdownTimer from '@/components/CountdownTimer'
 
 interface HeroProps {
   onRegisterClick: () => void
 }
 
 export default function Hero({ onRegisterClick }: HeroProps) {
+  const eventDate = new Date('2026-06-09T12:30:00')
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
       <div className="absolute inset-0 opacity-10">
@@ -46,6 +49,15 @@ export default function Hero({ onRegisterClick }: HeroProps) {
           <p className="text-base md:text-lg mb-12 max-w-3xl mx-auto leading-relaxed text-primary-foreground/80">
             Join us for an exclusive in-person event where engineering leaders and developers explore the future of software development. Learn proven strategies for transitioning from Azure DevOps to GitHub, discover hybrid integration patterns, and unlock the full potential of AI-powered development with GitHub Copilot.
           </p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-12"
+          >
+            <CountdownTimer targetDate={eventDate} />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
