@@ -6,32 +6,25 @@ import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 
 const speakers = [
   {
-    name: 'Dr. Sarah Chen',
-    role: 'Cloud Architect',
+    name: 'Florian Wagner',
+    role: 'Solution Engineer',
     company: 'Microsoft',
-    initials: 'SC',
+    initials: 'FW',
     color: 'bg-secondary/20'
   },
   {
-    name: 'Marcus Rodriguez',
-    role: 'Principal Engineer',
+    name: 'Timo Grünewald',
+    role: 'Solution Engineer',
     company: 'GitHub',
-    initials: 'MR',
+    initials: 'TG',
     color: 'bg-accent/20'
   },
   {
-    name: 'Emma Virtanen',
-    role: 'DevOps Lead',
+    name: 'Till Spindler',
+    role: 'Cloud Solution Expert',
     company: 'Eficode',
-    initials: 'EV',
+    initials: 'TS',
     color: 'bg-primary/20'
-  },
-  {
-    name: 'James Patterson',
-    role: 'Solutions Architect',
-    company: 'Microsoft',
-    initials: 'JP',
-    color: 'bg-secondary/20'
   }
 ]
 
@@ -56,7 +49,7 @@ export default function Speakers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
