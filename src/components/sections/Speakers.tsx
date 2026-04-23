@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
+import florianWagnerImg from '@/assets/images/florian-wagner.jpg'
 
 const speakers = [
   {
@@ -11,7 +12,8 @@ const speakers = [
     role: 'Solution Engineer',
     company: 'Microsoft',
     initials: 'FW',
-    color: 'bg-secondary/20'
+    color: 'bg-secondary/20',
+    image: florianWagnerImg
   },
   {
     name: 'Timo Grünewald',
