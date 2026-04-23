@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { List, X } from '@phosphor-icons/react'
 import microsoftLogo from '@/assets/images/microsoft-logo.svg'
 import githubLogo from '@/assets/images/github-logo.svg'
+import ShareEvent from '@/components/ShareEvent'
 
 interface NavigationProps {
   onRegisterClick: () => void
@@ -55,6 +56,7 @@ export default function Navigation({ onRegisterClick }: NavigationProps) {
                   {item.label}
                 </button>
               ))}
+              <ShareEvent variant="ghost" size="sm" showLabel={false} />
               <Button
                 onClick={onRegisterClick}
                 size="sm"
@@ -92,6 +94,9 @@ export default function Navigation({ onRegisterClick }: NavigationProps) {
                   {item.label}
                 </button>
               ))}
+              <div className="pt-2">
+                <ShareEvent variant="outline" size="default" showLabel={true} />
+              </div>
               <Button
                 onClick={() => {
                   onRegisterClick()

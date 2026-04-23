@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from '@phosphor-icons/react'
+import ShareEvent from '@/components/ShareEvent'
 
 interface HeroProps {
   onRegisterClick: () => void
@@ -50,7 +51,7 @@ export default function Hero({ onRegisterClick }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button
               size="lg"
@@ -68,6 +69,9 @@ export default function Hero({ onRegisterClick }: HeroProps) {
             >
               View Agenda
             </Button>
+            <div className="[&_button]:bg-primary-foreground/10 [&_button]:border-primary-foreground/30 [&_button]:text-primary-foreground [&_button]:hover:bg-primary-foreground/20 [&_button]:backdrop-blur-sm [&_button]:font-semibold [&_button]:text-base [&_button]:px-8 [&_button]:py-6 [&_button]:h-auto [&_button]:rounded-lg [&_svg]:text-primary-foreground">
+              <ShareEvent variant="outline" size="lg" showLabel={true} />
+            </div>
           </motion.div>
         </motion.div>
       </div>
