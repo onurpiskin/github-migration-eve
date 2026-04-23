@@ -12,7 +12,7 @@ const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname
 export default defineConfig({
   // Base path for GitHub Pages deployment
   // Uses VITE_BASE_PATH env variable if set, otherwise uses repo name in CI, or '/' for local dev
-  base: process.env.VITE_BASE_PATH || (process.env.GITHUB_ACTIONS ? '/github-migration-eve/' : '/'),
+  base: process.env.VITE_BASE_PATH || (process.env.GITHUB_ACTIONS ? '/Azure-DevOps-GitHub-Koeln-Event/' : '/'),
   plugins: [
     react(),
     tailwindcss(),
