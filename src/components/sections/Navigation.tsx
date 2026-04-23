@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { List, X } from '@phosphor-icons/react'
+import microsoftLogo from '@/assets/images/microsoft-logo.svg'
+import githubLogo from '@/assets/images/github-logo.svg'
 
 interface NavigationProps {
   onRegisterClick: () => void
@@ -30,12 +32,18 @@ export default function Navigation({ onRegisterClick }: NavigationProps) {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-lg border-b border-border shadow-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <button
-              onClick={() => handleNavClick('#hero')}
-              className="font-bold text-lg text-foreground hover:text-accent transition-colors"
-            >
-              Azure DevOps → GitHub
-            </button>
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <img src={microsoftLogo} alt="Microsoft" className="h-6 w-6" />
+                <img src={githubLogo} alt="GitHub" className="h-6 w-6 text-foreground" />
+              </div>
+              <button
+                onClick={() => handleNavClick('#hero')}
+                className="font-bold text-lg text-foreground hover:text-accent transition-colors hidden sm:block"
+              >
+                Azure DevOps → GitHub
+              </button>
+            </div>
 
             <div className="hidden md:flex items-center gap-1">
               {navItems.map((item) => (
