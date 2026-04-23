@@ -64,7 +64,7 @@ export default function Speakers() {
               <Card className="p-6 text-center hover:shadow-lg transition-all group">
                 <div className="flex justify-center mb-4">
                   <Avatar className="w-24 h-24">
-                    {speaker.image && <AvatarImage src={speaker.image} alt={speaker.name} />}
+                    <AvatarImage src={speaker.image} alt={speaker.name} />
                     <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
                       {speaker.initials}
                     </AvatarFallback>
