@@ -1,8 +1,9 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
+import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
 
 const speakers = [
   {
@@ -24,7 +25,8 @@ const speakers = [
     role: 'Cloud Solution Expert',
     company: 'Eficode',
     initials: 'TS',
-    color: 'bg-primary/20'
+    color: 'bg-primary/20',
+    image: tillSpindlerImg
   }
 ]
 
@@ -60,6 +62,7 @@ export default function Speakers() {
               <Card className="p-6 text-center hover:shadow-lg transition-all group">
                 <div className="flex justify-center mb-4">
                   <Avatar className="w-24 h-24">
+                    {speaker.image && <AvatarImage src={speaker.image} alt={speaker.name} />}
                     <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
                       {speaker.initials}
                     </AvatarFallback>
