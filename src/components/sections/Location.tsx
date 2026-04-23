@@ -74,13 +74,18 @@ export default function Location() {
                   </div>
                 </div>
 
-                <div className="bg-muted h-64 md:h-auto relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                    <div className="text-center">
-                      <MapPin size={48} weight="duotone" className="mx-auto mb-2 opacity-50" />
-                      <p className="text-sm">Interactive Map</p>
-                    </div>
-                  </div>
+                <div className="h-64 md:h-auto relative">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2513.1847389677657!2d6.9612842!3d50.9372778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf25a7a8a3e8c9%3A0x3f7b3a3c6a3c6a3c!2sHolzmarkt%202%2C%2050676%20K%C3%B6ln%2C%20Germany!5e0!3m2!1sen!2sde!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                    title="Microsoft Köln Location"
+                  />
                 </div>
               </div>
             </Card>
