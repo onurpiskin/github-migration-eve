@@ -8,49 +8,62 @@ const agendaItems = [
     title: 'Welcome & Coffee',
     description: 'Registration, networking, and refreshments',
     icon: Coffee,
-    color: 'text-amber-600'
+    color: 'text-amber-600',
+    isMainSession: false
   },
   {
     time: '13:00 – 13:45',
     title: 'Session 1: Why GitHub | Key Benefits and Migration Drivers (Microsoft)',
     description: 'Platform overview, competitive advantages, and real-world success stories',
     icon: Presentation,
-    color: 'text-secondary'
+    color: 'text-secondary',
+    isMainSession: true,
+    gradient: 'from-secondary/10 to-secondary/5',
+    borderColor: 'border-secondary/40'
   },
   {
     time: '13:45 – 14:30',
     title: 'Session 2: Shaping the Future with GitHub & Copilot (GitHub)',
     description: 'AI-driven development workflows and the next era of software engineering',
     icon: Robot,
-    color: 'text-accent'
+    color: 'text-accent',
+    isMainSession: true,
+    gradient: 'from-accent/10 to-accent/5',
+    borderColor: 'border-accent/40'
   },
   {
     time: '14:30 – 14:45',
     title: 'Break',
     description: 'Coffee, snacks, and networking',
     icon: CircleDashed,
-    color: 'text-muted-foreground'
+    color: 'text-muted-foreground',
+    isMainSession: false
   },
   {
     time: '14:45 – 15:30',
     title: 'Session 3: Unlocking GitHub\'s Potential (Eficode)',
     description: 'Setup, integration, and migration in practice, including live demos, hybrid scenarios, and best practices',
     icon: UsersFour,
-    color: 'text-secondary'
+    color: 'text-primary',
+    isMainSession: true,
+    gradient: 'from-primary/10 to-primary/5',
+    borderColor: 'border-primary/40'
   },
   {
     time: '15:30 – 16:00',
     title: 'Q&A',
     description: 'Open discussion with our experts',
     icon: Chat,
-    color: 'text-primary'
+    color: 'text-primary',
+    isMainSession: false
   },
   {
     time: '16:00 – 17:00',
     title: 'Networking & Closing',
     description: 'Connect with speakers, attendees, and event partners',
     icon: UsersFour,
-    color: 'text-accent'
+    color: 'text-accent',
+    isMainSession: false
   }
 ]
 
@@ -90,19 +103,39 @@ export default function Agenda() {
                   className="relative pl-16 md:pl-24 pb-12 last:pb-0"
                 >
                   <div className="absolute left-0 md:left-8 top-0 w-0 h-0 -translate-x-1/2">
-                    <div className="w-12 h-12 rounded-full bg-card border-2 border-border flex items-center justify-center shadow-sm">
-                      <Icon size={20} className={item.color} weight="duotone" />
+                    <div className={`w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-sm ${
+                      item.isMainSession 
+                        ? `border-2 ${item.borderColor} bg-gradient-to-br ${item.gradient}` 
+                        : 'border-2 border-border'
+                    }`}>
+                      <Icon 
+                        size={item.isMainSession ? 24 : 20} 
+                        className={item.color} 
+                        weight={item.isMainSession ? "fill" : "duotone"} 
+                      />
                     </div>
                   </div>
 
-                  <div className="bg-card border border-border rounded-lg p-6 hover:shadow-md hover:border-accent/30 transition-all">
+                  <div className={`rounded-lg p-6 transition-all ${
+                    item.isMainSession 
+                      ? `bg-gradient-to-br ${item.gradient} border-2 ${item.borderColor} hover:shadow-lg hover:scale-[1.02]` 
+                      : 'bg-card border border-border hover:shadow-md hover:border-accent/30'
+                  }`}>
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
-                      <h3 className="text-xl font-semibold">{item.title}</h3>
-                      <div className="text-sm font-medium text-muted-foreground bg-muted px-3 py-1 rounded-md w-fit">
+                      <h3 className={`${item.isMainSession ? 'text-xl md:text-2xl' : 'text-xl'} font-semibold`}>
+                        {item.title}
+                      </h3>
+                      <div className={`text-sm font-medium px-3 py-1 rounded-md w-fit ${
+                        item.isMainSession 
+                          ? `${item.color} bg-card/80 border ${item.borderColor}` 
+                          : 'text-muted-foreground bg-muted'
+                      }`}>
                         {item.time}
                       </div>
                     </div>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className={item.isMainSession ? 'text-foreground/80 font-medium' : 'text-muted-foreground'}>
+                      {item.description}
+                    </p>
                   </div>
                 </motion.div>
               )
