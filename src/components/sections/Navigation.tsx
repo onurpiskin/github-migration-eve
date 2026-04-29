@@ -17,6 +17,7 @@ const navItems = [
   { label: 'Demos', href: '#demos' },
   { label: 'Speakers', href: '#speakers' },
   { label: 'Location', href: '#location' },
+  { label: 'FAQ', href: '#faq' },
 ]
 
 export default function Navigation({ onRegisterClick }: NavigationProps) {

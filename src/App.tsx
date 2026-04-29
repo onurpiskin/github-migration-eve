@@ -6,6 +6,7 @@ import Agenda from '@/components/sections/Agenda'
 import DemoHighlights from '@/components/sections/DemoHighlights'
 import Speakers from '@/components/sections/Speakers'
 import Location from '@/components/sections/Location'
+import FAQ from '@/components/sections/FAQ'
 import CallToAction from '@/components/sections/CallToAction'
 import Footer from '@/components/sections/Footer'
 
@@ -28,6 +29,7 @@ function App() {
         <DemoHighlights />
         <Speakers />
         <Location />
+        <FAQ />
         <CallToAction onRegisterClick={openRegistration} />
       </main>
 

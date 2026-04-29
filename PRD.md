@@ -61,6 +61,13 @@ This is a multi-section landing page with interactive components (navigation, mo
 - **Progression**: User scrolls to location → Reads address → Views map/directions → Plans arrival
 - **Success criteria**: Address is copy-able, map is visible, instructions are clear
 
+### FAQ Section
+- **Functionality**: Collapsible accordion of frequently asked questions with comprehensive answers
+- **Purpose**: Address common attendee questions about the event, reducing barriers to registration
+- **Trigger**: Scroll into view
+- **Progression**: User scrolls to FAQ → Scans questions → Clicks question of interest → Accordion expands to show answer → User reads answer and gains clarity
+- **Success criteria**: Questions are relevant and comprehensive, answers are clear and helpful, accordion animation is smooth, contact option available for unlisted questions
+
 ## Edge Case Handling
 
 - **Slow Network**: Display skeleton loaders for images, ensure content is readable before fonts load
