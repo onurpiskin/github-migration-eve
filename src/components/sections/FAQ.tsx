@@ -26,10 +26,6 @@ const faqs = [
     answer: 'Yes, coffee and light refreshments will be provided during the welcome session and breaks. Networking session will include snacks and beverages.'
   },
   {
-    question: 'Can I get a certificate of attendance?',
-    answer: 'Yes, all registered attendees will receive a certificate of attendance after the event, which can be used for professional development records.'
-  },
-  {
     question: 'Will the presentations be recorded?',
     answer: 'Selected sessions will be recorded and made available to registered attendees after the event. Please note that Q&A and networking sessions will not be recorded.'
   },
@@ -40,10 +36,6 @@ const faqs = [
   {
     question: 'Is there parking available at the venue?',
     answer: 'The Microsoft Köln office is located in the city center with limited parking. We recommend using public transportation. The venue is well-connected by U-Bahn (Appellhofplatz station) and multiple bus lines.'
-  },
-  {
-    question: 'What are the COVID-19 safety measures?',
-    answer: 'We follow current local health guidelines. Attendees are encouraged to stay home if feeling unwell. Hand sanitizer will be available throughout the venue.'
   },
   {
     question: 'Can I bring a colleague?',
