@@ -19,8 +19,8 @@ const agendaItems = [
   },
   {
     time: '13:45 – 14:30',
-    title: 'Future of GitHub & Copilot',
-    description: 'AI-powered development workflows and the future of software engineering',
+    title: 'Session 2: Shaping the Future with GitHub & Copilot (GitHub)',
+    description: 'AI-driven development workflows and the next era of software engineering',
     icon: Robot,
     color: 'text-accent'
   },
