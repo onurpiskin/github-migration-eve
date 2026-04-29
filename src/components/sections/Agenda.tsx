@@ -12,8 +12,8 @@ const agendaItems = [
   },
   {
     time: '13:00 – 13:45',
-    title: 'Benefits of GitHub',
-    description: 'Platform overview, competitive advantages, and success stories',
+    title: 'Session 1: Why GitHub | Key Benefits and Migration Drivers (Microsoft)',
+    description: 'Platform overview, competitive advantages, and real-world success stories',
     icon: Presentation,
     color: 'text-secondary'
   },
