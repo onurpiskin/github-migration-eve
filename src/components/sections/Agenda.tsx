@@ -33,8 +33,8 @@ const agendaItems = [
   },
   {
     time: '14:45 – 15:30',
-    title: 'Setup, Integration & Migration',
-    description: 'Live demos of migration tools, hybrid scenarios, and best practices',
+    title: 'Session 3: Unlocking GitHub\'s Potential (Eficode)',
+    description: 'Setup, integration, and migration in practice, including live demos, hybrid scenarios, and best practices',
     icon: UsersFour,
     color: 'text-secondary'
   },
