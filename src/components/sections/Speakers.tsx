@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
-import arturSpethImg from '@/assets/images/artur-speth.jpg'
 import timoGrunewaldImg from '@/assets/images/timo-grunewald.jpg'
 
 const speakers = [
@@ -14,7 +13,7 @@ const speakers = [
     company: 'Microsoft',
     initials: 'AS',
     color: 'bg-secondary/20',
-    image: arturSpethImg
+    image: undefined
   },
   {
     name: 'Timo Grünewald',
