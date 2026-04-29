@@ -4,17 +4,17 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
-import florianWagnerImg from '@/assets/images/florian-wagner.jpg'
+import arturSpethImg from '@/assets/images/artur-speth.jpg'
 import timoGrunewaldImg from '@/assets/images/timo-grunewald.jpg'
 
 const speakers = [
   {
-    name: 'Florian Wagner',
+    name: 'Artur Speth',
     role: 'Solution Engineer',
     company: 'Microsoft',
-    initials: 'FW',
+    initials: 'AS',
     color: 'bg-secondary/20',
-    image: florianWagnerImg
+    image: arturSpethImg
   },
   {
     name: 'Timo Grünewald',
