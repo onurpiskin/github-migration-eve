@@ -9,7 +9,7 @@ import Location from '@/components/sections/Location'
 import CallToAction from '@/components/sections/CallToAction'
 import Footer from '@/components/sections/Footer'
 
-const REGISTRATION_URL = 'https://forms.office.com/Pages/DesignPageV2.aspx?origin=RevampFRE&subpage=design&id=v4j5cvGGr0GRqy180BHbR7-_Ey3GyI1GgFpm0Eq6nfVUN0xWRjdDRVc5WjlEMUw0RkRYWkpERjVVUC4u&topview=Prefill'
+const REGISTRATION_URL = 'https://forms.office.com/r/Yhx7HY9mY6?origin=lprLink'
 
 function App() {
   const openRegistration = () => {
