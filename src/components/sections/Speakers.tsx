@@ -4,6 +4,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
+import microsoftLogo from '@/assets/images/microsoft-logo.svg'
+import githubLogo from '@/assets/images/github-logo.svg'
+import eficodeLogo from '@/assets/images/eficode-logo.svg'
 
 const speakers = [
   {
@@ -12,7 +15,8 @@ const speakers = [
     company: 'Microsoft',
     initials: 'AS',
     color: 'bg-secondary/20',
-    image: undefined
+    image: undefined,
+    logo: microsoftLogo
   },
   {
     name: 'Julia Kordick',
@@ -20,7 +24,8 @@ const speakers = [
     company: 'GitHub',
     initials: 'JK',
     color: 'bg-accent/20',
-    image: undefined
+    image: undefined,
+    logo: githubLogo
   },
   {
     name: 'Till Spindler',
@@ -28,7 +33,8 @@ const speakers = [
     company: 'Eficode',
     initials: 'TS',
     color: 'bg-primary/20',
-    image: tillSpindlerImg
+    image: tillSpindlerImg,
+    logo: eficodeLogo
   },
   {
     name: 'Magnus Timner',
@@ -36,7 +42,8 @@ const speakers = [
     company: 'Solidify/Eficode',
     initials: 'MT',
     color: 'bg-primary/20',
-    image: undefined
+    image: undefined,
+    logo: eficodeLogo
   }
 ]
 
@@ -68,28 +75,39 @@ export default function Speakers() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="perspective-1000"
             >
-              <Card className="p-6 text-center hover:shadow-lg transition-all group">
-                <div className="flex justify-center mb-4">
-                  <Avatar className="w-24 h-24">
-                    <AvatarImage src={speaker.image} alt={speaker.name} />
-                    <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
-                      {speaker.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                </div>
-                <h3 className="text-lg font-semibold mb-1">{speaker.name}</h3>
-                <p className="text-sm text-muted-foreground mb-1">{speaker.role}</p>
-                <p className="text-sm font-medium text-accent mb-4">{speaker.company}</p>
-                <div className="flex gap-3 justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="text-muted-foreground hover:text-secondary transition-colors">
-                    <LinkedinLogo size={20} weight="fill" />
-                  </button>
-                  <button className="text-muted-foreground hover:text-foreground transition-colors">
-                    <GithubLogo size={20} weight="fill" />
-                  </button>
-                </div>
-              </Card>
+              <div className="relative w-full h-[320px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
+                <Card className="absolute inset-0 p-6 text-center [backface-visibility:hidden]">
+                  <div className="flex justify-center mb-4">
+                    <Avatar className="w-24 h-24">
+                      <AvatarImage src={speaker.image} alt={speaker.name} />
+                      <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
+                        {speaker.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-1">{speaker.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-1">{speaker.role}</p>
+                  <p className="text-sm font-medium text-accent mb-4">{speaker.company}</p>
+                  <div className="flex gap-3 justify-center">
+                    <button className="text-muted-foreground hover:text-secondary transition-colors">
+                      <LinkedinLogo size={20} weight="fill" />
+                    </button>
+                    <button className="text-muted-foreground hover:text-foreground transition-colors">
+                      <GithubLogo size={20} weight="fill" />
+                    </button>
+                  </div>
+                </Card>
+
+                <Card className="absolute inset-0 p-6 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
+                  <img 
+                    src={speaker.logo} 
+                    alt={`${speaker.company} logo`}
+                    className="w-full h-auto max-h-32 object-contain"
+                  />
+                </Card>
+              </div>
             </motion.div>
           ))}
         </div>
