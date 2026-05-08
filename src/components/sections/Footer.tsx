@@ -26,7 +26,14 @@ export default function Footer() {
               >
                 Privacy Policy
               </a>
-              <button className="hover:text-accent transition-colors">Terms of Service</button>
+              <a 
+                href="https://docs.github.com/en/site-policy/github-terms/github-event-terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                Event Terms
+              </a>
               <button className="hover:text-accent transition-colors">Contact</button>
             </div>
             <p className="text-xs text-primary-foreground/60">
