@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
-import timoGrunewaldImg from '@/assets/images/timo-grunewald.jpg'
 
 const speakers = [
   {
@@ -16,12 +15,12 @@ const speakers = [
     image: undefined
   },
   {
-    name: 'Timo Grünewald',
+    name: 'Julia Kordick',
     role: 'Solution Engineer',
     company: 'GitHub',
-    initials: 'TG',
+    initials: 'JK',
     color: 'bg-accent/20',
-    image: timoGrunewaldImg
+    image: undefined
   },
   {
     name: 'Till Spindler',
@@ -30,6 +29,14 @@ const speakers = [
     initials: 'TS',
     color: 'bg-primary/20',
     image: tillSpindlerImg
+  },
+  {
+    name: 'Magnus Timner',
+    role: 'VP and Co-founder',
+    company: 'Solidify/Eficode',
+    initials: 'MT',
+    color: 'bg-primary/20',
+    image: undefined
   }
 ]
 
@@ -54,7 +61,7 @@ export default function Speakers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
