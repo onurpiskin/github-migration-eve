@@ -18,7 +18,14 @@ export default function Footer() {
 
           <div className="flex flex-col items-center md:items-end gap-3">
             <div className="flex flex-wrap gap-6 text-sm">
-              <button className="hover:text-accent transition-colors">Privacy Policy</button>
+              <a 
+                href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement#how-github-uses-your-information"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                Privacy Policy
+              </a>
               <button className="hover:text-accent transition-colors">Terms of Service</button>
               <button className="hover:text-accent transition-colors">Contact</button>
             </div>
