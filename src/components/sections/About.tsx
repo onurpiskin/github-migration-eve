@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { GitBranch, TrendUp, Shield, Users } from '@phosphor-icons/react'
+import CopilotBackground from '@/components/CopilotBackground'
 
 const features = [
   {
@@ -31,8 +32,10 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="about" className="relative py-20 md:py-32 bg-background" ref={ref}>
+      <CopilotBackground density="low" opacity={0.025} />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

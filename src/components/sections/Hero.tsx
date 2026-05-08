@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight } from '@phosphor-icons/react'
 import ShareEvent from '@/components/ShareEvent'
 import CountdownTimer from '@/components/CountdownTimer'
+import CopilotBackground from '@/components/CopilotBackground'
 
 interface HeroProps {
   onRegisterClick: () => void
@@ -13,6 +14,8 @@ export default function Hero({ onRegisterClick }: HeroProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
+      <CopilotBackground density="medium" opacity={0.04} />
+      
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, oklch(0.98 0 0 / 0.05) 35px, oklch(0.98 0 0 / 0.05) 70px)`

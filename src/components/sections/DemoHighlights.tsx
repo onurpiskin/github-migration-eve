@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { GitBranch, FlowArrow, Robot, Shield, ChartLine, Database } from '@phosphor-icons/react'
 import { Card } from '@/components/ui/card'
+import CopilotBackground from '@/components/CopilotBackground'
 
 const highlights = [
   {
@@ -41,8 +42,10 @@ export default function DemoHighlights() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="demos" className="py-20 md:py-32 bg-muted/30" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="demos" className="relative py-20 md:py-32 bg-muted/30" ref={ref}>
+      <CopilotBackground density="low" opacity={0.02} />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
