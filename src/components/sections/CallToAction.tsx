@@ -48,6 +48,7 @@ export default function CallToAction({ onRegisterClick }: CallToActionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col items-center gap-3"
           >
             <Button
               size="lg"
@@ -57,6 +58,7 @@ export default function CallToAction({ onRegisterClick }: CallToActionProps) {
               Secure Your Spot
               <ArrowRight className="ml-2" weight="bold" size={20} />
             </Button>
+            <span className="text-sm font-medium text-accent-foreground/80">Limited Seats Available</span>
           </motion.div>
 
           <p className="text-sm mt-6 opacity-75">

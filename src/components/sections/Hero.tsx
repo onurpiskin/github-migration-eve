@@ -63,26 +63,31 @@ export default function Hero({ onRegisterClick }: HeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col gap-6 items-center"
           >
-            <Button
-              size="lg"
-              onClick={onRegisterClick}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8 py-6 h-auto rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
-            >
-              Register Now
-              <ArrowRight className="ml-2" weight="bold" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 font-semibold text-base px-8 py-6 h-auto rounded-lg backdrop-blur-sm"
-            >
-              View Agenda
-            </Button>
-            <div className="[&_button]:bg-primary-foreground/10 [&_button]:border-primary-foreground/30 [&_button]:text-primary-foreground [&_button]:hover:bg-primary-foreground/20 [&_button]:backdrop-blur-sm [&_button]:font-semibold [&_button]:text-base [&_button]:px-8 [&_button]:py-6 [&_button]:h-auto [&_button]:rounded-lg [&_svg]:text-primary-foreground">
-              <ShareEvent variant="outline" size="lg" showLabel={true} />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col items-center gap-2">
+                <Button
+                  size="lg"
+                  onClick={onRegisterClick}
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-base px-8 py-6 h-auto rounded-lg shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                >
+                  Register Now
+                  <ArrowRight className="ml-2" weight="bold" />
+                </Button>
+                <span className="text-xs font-medium text-primary-foreground/70">Limited Seats Available</span>
+              </div>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-primary-foreground/10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/20 font-semibold text-base px-8 py-6 h-auto rounded-lg backdrop-blur-sm"
+              >
+                View Agenda
+              </Button>
+              <div className="[&_button]:bg-primary-foreground/10 [&_button]:border-primary-foreground/30 [&_button]:text-primary-foreground [&_button]:hover:bg-primary-foreground/20 [&_button]:backdrop-blur-sm [&_button]:font-semibold [&_button]:text-base [&_button]:px-8 [&_button]:py-6 [&_button]:h-auto [&_button]:rounded-lg [&_svg]:text-primary-foreground">
+                <ShareEvent variant="outline" size="lg" showLabel={true} />
+              </div>
             </div>
           </motion.div>
         </motion.div>
