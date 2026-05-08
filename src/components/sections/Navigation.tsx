@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { List, X } from '@phosphor-icons/react'
 import microsoftLogo from '@/assets/images/microsoft-logo.svg'
 import githubLogo from '@/assets/images/github-logo.svg'
+import eficodeLogo from '@/assets/images/eficode-logo.svg'
 import ShareEvent from '@/components/ShareEvent'
 
 interface NavigationProps {
@@ -38,6 +39,7 @@ export default function Navigation({ onRegisterClick }: NavigationProps) {
               <div className="flex items-center gap-3">
                 <img src={microsoftLogo} alt="Microsoft" className="h-6 w-6" />
                 <img src={githubLogo} alt="GitHub" className="h-6 w-6 text-foreground" />
+                <img src={eficodeLogo} alt="Eficode" className="h-6 w-6" />
               </div>
               <button
                 onClick={() => handleNavClick('#hero')}
