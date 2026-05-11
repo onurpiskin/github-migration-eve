@@ -10,7 +10,7 @@ import FAQ from '@/components/sections/FAQ'
 import CallToAction from '@/components/sections/CallToAction'
 import Footer from '@/components/sections/Footer'
 
-const REGISTRATION_URL = 'https://forms.office.com/r/Yhx7HY9mY6?origin=lprLink'
+const REGISTRATION_URL = 'https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR7-_Ey3GyI1GgFpm0Eq6nfVUN0xWRjdDRVc5WjlEMUw0RkRYWkpERjVVUC4u&origin=lprLink&route=shorturl'
 
 function App() {
   const openRegistration = () => {
