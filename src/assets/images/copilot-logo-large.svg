@@ -1,0 +1,37 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- Base shape -->
+    <path d="M512 64C300.8 64 128 236.8 128 448c0 115.2 51.2 217.6 134.4 288v128c0 35.2 28.8 64 64 64h371.2c35.2 0 64-28.8 64-64V736c83.2-70.4 134.4-172.8 134.4-288C896 236.8 723.2 64 512 64z" fill="url(#gradient1)"/>
+    
+    <!-- Eyes/goggles -->
+    <ellipse cx="355" cy="380" rx="140" ry="160" fill="url(#gradient2)"/>
+    <ellipse cx="669" cy="380" rx="140" ry="160" fill="url(#gradient2)"/>
+    
+    <!-- Inner eye details -->
+    <ellipse cx="355" cy="420" rx="100" ry="120" fill="#1F2937"/>
+    <ellipse cx="669" cy="420" rx="100" ry="120" fill="#1F2937"/>
+    
+    <!-- Nose bridge -->
+    <rect x="480" y="340" width="64" height="40" rx="20" fill="url(#gradient2)"/>
+    
+    <!-- Lower face -->
+    <path d="M300 560 C300 560, 350 680, 512 680 C674 680, 724 560, 724 560 L724 720 C724 760, 690 800, 650 800 L374 800 C334 800, 300 760, 300 720 Z" fill="#1E3A8A"/>
+    
+    <!-- Nose/mouth details -->
+    <ellipse cx="420" cy="650" rx="35" ry="50" fill="#22D3EE"/>
+    <ellipse cx="604" cy="650" rx="35" ry="50" fill="#22D3EE"/>
+  </g>
+  
+  <defs>
+    <linearGradient id="gradient1" x1="512" y1="64" x2="512" y2="928" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    
+    <linearGradient id="gradient2" x1="512" y1="200" x2="512" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+</svg>

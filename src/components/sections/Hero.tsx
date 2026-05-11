@@ -4,6 +4,7 @@ import { ArrowRight } from '@phosphor-icons/react'
 import ShareEvent from '@/components/ShareEvent'
 import CountdownTimer from '@/components/CountdownTimer'
 import CopilotBackground from '@/components/CopilotBackground'
+import copilotLogo from '@/assets/images/copilot-logo-large.svg'
 
 interface HeroProps {
   onRegisterClick: () => void
@@ -15,6 +16,14 @@ export default function Hero({ onRegisterClick }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
       <CopilotBackground density="medium" variant="dark" />
+      
+      <div className="absolute inset-0 opacity-5 flex items-center justify-center">
+        <img 
+          src={copilotLogo} 
+          alt="" 
+          className="w-full max-w-3xl h-auto object-contain filter blur-sm"
+        />
+      </div>
       
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
