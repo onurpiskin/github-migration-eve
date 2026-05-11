@@ -34,7 +34,14 @@ export default function Footer() {
               >
                 Event Terms
               </a>
-              <button className="hover:text-accent transition-colors">Contact</button>
+              <a 
+                href="https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR7-_Ey3GyI1GgFpm0Eq6nfVUNzRRU1NENVpOUzRCRko4OENUNTM3ME1GMi4u&origin=lprLink&route=shorturl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                Contact
+              </a>
             </div>
             <p className="text-xs text-primary-foreground/60">
               © 2026 All rights reserved
