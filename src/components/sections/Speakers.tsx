@@ -44,6 +44,24 @@ const speakers = [
     color: 'bg-primary/20',
     image: undefined,
     logo: eficodeLogo
+  },
+  {
+    name: 'Federica Ioris',
+    role: 'Senior Account Manager',
+    company: 'GitHub',
+    initials: 'FI',
+    color: 'bg-accent/20',
+    image: undefined,
+    logo: githubLogo
+  },
+  {
+    name: 'Onur Pişkin',
+    role: 'Senior Account Manager',
+    company: 'GitHub',
+    initials: 'OP',
+    color: 'bg-accent/20',
+    image: undefined,
+    logo: githubLogo
   }
 ]
 
