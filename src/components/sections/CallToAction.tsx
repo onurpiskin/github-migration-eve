@@ -14,12 +14,30 @@ export default function CallToAction({ onRegisterClick }: CallToActionProps) {
 
   return (
     <section className="relative py-20 md:py-32 bg-gradient-to-br from-accent via-accent/90 to-secondary overflow-hidden" ref={ref}>
-      <CopilotBackground density="medium" variant="dark" />
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, oklch(0.98 0 0 / 0.05) 30deg, transparent 60deg)`
-        }} />
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `radial-gradient(circle at 30% 50%, oklch(0.75 0.19 145) 0%, oklch(0.68 0.17 145) 100%)`
+          }}
+        />
+        <div 
+          className="absolute inset-0 opacity-20" 
+          style={{
+            backgroundImage: `radial-gradient(circle, oklch(0.98 0 0 / 0.2) 1px, transparent 1px)`,
+            backgroundSize: '32px 32px'
+          }}
+        />
+        <div 
+          className="absolute inset-0 opacity-20" 
+          style={{
+            background: `radial-gradient(ellipse at top left, oklch(0.60 0.15 240 / 0.2) 0%, transparent 50%),
+                         radial-gradient(ellipse at bottom right, oklch(0.20 0.01 240 / 0.15) 0%, transparent 50%)`
+          }}
+        />
       </div>
+      
+      <CopilotBackground density="medium" variant="dark" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

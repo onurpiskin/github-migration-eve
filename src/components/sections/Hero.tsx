@@ -15,6 +15,29 @@ export default function Hero({ onRegisterClick }: HeroProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `radial-gradient(circle at 50% 50%, oklch(0.3 0.02 240) 0%, oklch(0.18 0.01 240) 100%)`
+          }}
+        />
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: `radial-gradient(circle, oklch(0.98 0 0 / 0.1) 1px, transparent 1px)`,
+            backgroundSize: '32px 32px'
+          }}
+        />
+        <div 
+          className="absolute inset-0 opacity-30" 
+          style={{
+            background: `radial-gradient(ellipse at top, oklch(0.60 0.15 240 / 0.15) 0%, transparent 60%),
+                         radial-gradient(ellipse at bottom right, oklch(0.68 0.17 145 / 0.1) 0%, transparent 50%)`
+          }}
+        />
+      </div>
+      
       <CopilotBackground density="medium" variant="dark" />
       
       <div className="absolute inset-0 opacity-5 flex items-center justify-center">
@@ -23,12 +46,6 @@ export default function Hero({ onRegisterClick }: HeroProps) {
           alt="" 
           className="w-full max-w-3xl h-auto object-contain filter blur-sm"
         />
-      </div>
-      
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, oklch(0.98 0 0 / 0.05) 35px, oklch(0.98 0 0 / 0.05) 70px)`
-        }} />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 py-20 md:py-32">

@@ -32,7 +32,22 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="about" className="relative py-20 md:py-32 bg-background" ref={ref}>
+    <section id="about" className="relative py-20 md:py-32 bg-background overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 opacity-30">
+        <div 
+          className="absolute top-0 left-1/4 w-96 h-96 rounded-full" 
+          style={{
+            background: `radial-gradient(circle, oklch(0.68 0.17 145 / 0.08) 0%, transparent 70%)`
+          }}
+        />
+        <div 
+          className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full" 
+          style={{
+            background: `radial-gradient(circle, oklch(0.60 0.15 240 / 0.08) 0%, transparent 70%)`
+          }}
+        />
+      </div>
+      
       <CopilotBackground density="low" variant="light" />
       
       <div className="container mx-auto px-4 relative z-10">
