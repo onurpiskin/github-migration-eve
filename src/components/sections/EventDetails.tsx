@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { CalendarBlank, Clock, MapPin, Users } from '@phosphor-icons/react'
 import { Card } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import CopilotBackground from '@/components/CopilotBackground'
 
 const details = [
   {
@@ -53,6 +54,7 @@ export default function EventDetails() {
       ref={ref}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-muted/40 via-background to-muted/30" />
+      <CopilotBackground density="low" variant="light" />
       
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, currentColor 35px, currentColor 36px),

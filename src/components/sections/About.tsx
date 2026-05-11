@@ -33,7 +33,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-20 md:py-32 bg-background" ref={ref}>
-      <CopilotBackground density="low" opacity={0.025} />
+      <CopilotBackground density="low" variant="light" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

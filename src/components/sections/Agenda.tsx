@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Coffee, Presentation, Robot, CircleDashed, UsersFour, Chat } from '@phosphor-icons/react'
+import CopilotBackground from '@/components/CopilotBackground'
 
 const agendaItems = [
   {
@@ -72,8 +73,9 @@ export default function Agenda() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="agenda" className="py-20 md:py-32 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="agenda" className="relative py-20 md:py-32 bg-background" ref={ref}>
+      <CopilotBackground density="medium" variant="light" />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

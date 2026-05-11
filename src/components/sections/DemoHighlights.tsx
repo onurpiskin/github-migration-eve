@@ -43,7 +43,7 @@ export default function DemoHighlights() {
 
   return (
     <section id="demos" className="relative py-20 md:py-32 bg-muted/30" ref={ref}>
-      <CopilotBackground density="low" opacity={0.02} />
+      <CopilotBackground density="low" variant="light" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

@@ -14,7 +14,7 @@ export default function Hero({ onRegisterClick }: HeroProps) {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
-      <CopilotBackground density="medium" opacity={0.04} />
+      <CopilotBackground density="medium" variant="dark" />
       
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{

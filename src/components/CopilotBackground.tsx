@@ -1,39 +1,68 @@
 import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 
 interface CopilotBackgroundProps {
   density?: 'low' | 'medium' | 'high'
-  opacity?: number
+  variant?: 'light' | 'dark'
 }
 
-export default function CopilotBackground({ density = 'medium', opacity = 0.03 }: CopilotBackgroundProps) {
-  const iconCount = density === 'low' ? 3 : density === 'medium' ? 5 : 8
-
-  const icons = Array.from({ length: iconCount }, (_, i) => ({
-    id: i,
-    size: Math.random() * 80 + 40,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    duration: Math.random() * 20 + 15,
-    delay: Math.random() * 5,
-  }))
+export default function CopilotBackground({ density = 'medium', variant = 'light' }: CopilotBackgroundProps) {
+  const icons = useMemo(() => {
+    const iconCount = density === 'low' ? 8 : density === 'medium' ? 15 : 25
+    
+    return Array.from({ length: iconCount }, (_, i) => {
+      const sizeCategory = Math.random()
+      let size: number
+      let opacity: number
+      let blur: number
+      
+      if (sizeCategory < 0.3) {
+        size = Math.random() * 60 + 120
+        opacity = variant === 'light' ? 0.015 : 0.02
+        blur = 2
+      } else if (sizeCategory < 0.7) {
+        size = Math.random() * 40 + 60
+        opacity = variant === 'light' ? 0.025 : 0.035
+        blur = 1
+      } else {
+        size = Math.random() * 30 + 30
+        opacity = variant === 'light' ? 0.04 : 0.05
+        blur = 0.5
+      }
+      
+      return {
+        id: i,
+        size,
+        opacity,
+        blur,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        duration: Math.random() * 30 + 25,
+        delay: Math.random() * 10,
+        rotationRange: Math.random() * 10 + 5,
+      }
+    })
+  }, [density, variant])
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {icons.map((icon) => (
         <motion.div
           key={icon.id}
-          className="absolute"
+          className="absolute will-change-transform"
           style={{
             left: `${icon.x}%`,
             top: `${icon.y}%`,
             width: `${icon.size}px`,
             height: `${icon.size}px`,
-            opacity: opacity,
+            opacity: icon.opacity,
+            filter: `blur(${icon.blur}px)`,
           }}
           animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            rotate: [0, 5, -5, 0],
+            y: [0, -20, 0],
+            x: [0, Math.random() > 0.5 ? 15 : -15, 0],
+            rotate: [0, icon.rotationRange, -icon.rotationRange, 0],
+            scale: [1, 1.05, 0.95, 1],
           }}
           transition={{
             duration: icon.duration,
@@ -43,13 +72,15 @@ export default function CopilotBackground({ density = 'medium', opacity = 0.03 }
           }}
         >
           <svg
-            viewBox="0 0 65 65"
+            viewBox="0 0 1024 1024"
             fill="currentColor"
-            className="w-full h-full text-primary"
+            className="w-full h-full text-primary drop-shadow-sm"
+            style={{ transform: 'translateZ(0)' }}
           >
-            <path fillRule="evenodd" clipRule="evenodd" d="M32.5 0L0 18.75v27.5L32.5 65l32.5-18.75v-27.5L32.5 0zm0 8.125l23.75 13.75v27.5L32.5 56.875 8.75 43.125v-27.5l23.75-13.75z"/>
-            <path d="M32.5 15.625c-9.5 0-17.5 7.5-17.5 17.5s8 17.5 17.5 17.5 17.5-7.5 17.5-17.5-8-17.5-17.5-17.5zm-7.5 15a2.5 2.5 0 100 5 2.5 2.5 0 000-5zm15 0a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/>
-            <path d="M23.125 38.75c1.25 2.5 4.375 4.375 9.375 4.375s8.125-1.875 9.375-4.375H23.125z"/>
+            <path d="M512 0L64 298.7v426.6L512 1024l448-298.7V298.7L512 0zm0 128l358.4 238.9v290.2L512 896 153.6 657.1V366.9L512 128z"/>
+            <circle cx="384" cy="448" r="48"/>
+            <circle cx="640" cy="448" r="48"/>
+            <path d="M332.8 588.8c25.6 51.2 89.6 89.6 179.2 89.6s153.6-38.4 179.2-89.6H332.8z"/>
           </svg>
         </motion.div>
       ))}

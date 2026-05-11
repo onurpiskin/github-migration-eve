@@ -7,6 +7,7 @@ import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
 import microsoftLogo from '@/assets/images/microsoft-logo.svg'
 import githubLogo from '@/assets/images/github-logo.svg'
 import eficodeLogo from '@/assets/images/eficode-logo.svg'
+import CopilotBackground from '@/components/CopilotBackground'
 
 const speakers = [
   {
@@ -70,8 +71,9 @@ export default function Speakers() {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section id="speakers" className="py-20 md:py-32 bg-background" ref={ref}>
-      <div className="container mx-auto px-4">
+    <section id="speakers" className="relative py-20 md:py-32 bg-background" ref={ref}>
+      <CopilotBackground density="low" variant="light" />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

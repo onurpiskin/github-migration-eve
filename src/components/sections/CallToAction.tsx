@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkle } from '@phosphor-icons/react'
+import CopilotBackground from '@/components/CopilotBackground'
 
 interface CallToActionProps {
   onRegisterClick: () => void
@@ -12,7 +13,8 @@ export default function CallToAction({ onRegisterClick }: CallToActionProps) {
   const isInView = useInView(ref, { once: true, amount: 0.2 })
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-br from-accent via-accent/90 to-secondary overflow-hidden relative" ref={ref}>
+    <section className="relative py-20 md:py-32 bg-gradient-to-br from-accent via-accent/90 to-secondary overflow-hidden" ref={ref}>
+      <CopilotBackground density="medium" variant="dark" />
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `repeating-conic-gradient(from 0deg at 50% 50%, transparent 0deg, oklch(0.98 0 0 / 0.05) 30deg, transparent 60deg)`
