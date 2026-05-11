@@ -4,7 +4,6 @@ import { ArrowRight } from '@phosphor-icons/react'
 import ShareEvent from '@/components/ShareEvent'
 import CountdownTimer from '@/components/CountdownTimer'
 import CopilotBackground from '@/components/CopilotBackground'
-import copilotLogo from '@/assets/images/copilot-logo-large.svg'
 
 interface HeroProps {
   onRegisterClick: () => void
@@ -39,14 +38,6 @@ export default function Hero({ onRegisterClick }: HeroProps) {
       </div>
       
       <CopilotBackground density="medium" variant="dark" />
-      
-      <div className="absolute inset-0 opacity-5 flex items-center justify-center">
-        <img 
-          src={copilotLogo} 
-          alt="" 
-          className="w-full max-w-3xl h-auto object-contain filter blur-sm"
-        />
-      </div>
 
       <div className="container relative z-10 mx-auto px-4 py-20 md:py-32">
         <motion.div
