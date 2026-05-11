@@ -4,6 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
 import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
 import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
+import federicaIorisImg from '@/assets/images/federica-ioris.svg'
+import onurPiskinImg from '@/assets/images/onur-piskin.svg'
 import microsoftLogo from '@/assets/images/microsoft-logo.svg'
 import githubLogo from '@/assets/images/github-logo.svg'
 import eficodeLogo from '@/assets/images/eficode-logo.svg'
@@ -52,7 +54,7 @@ const speakers = [
     company: 'GitHub',
     initials: 'FI',
     color: 'bg-accent/20',
-    image: undefined,
+    image: federicaIorisImg,
     logo: githubLogo
   },
   {
@@ -61,7 +63,7 @@ const speakers = [
     company: 'GitHub',
     initials: 'OP',
     color: 'bg-accent/20',
-    image: undefined,
+    image: onurPiskinImg,
     logo: githubLogo
   }
 ]
