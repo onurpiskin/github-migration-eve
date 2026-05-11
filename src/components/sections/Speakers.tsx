@@ -87,12 +87,56 @@ export default function Speakers() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {speakers.map((speaker, index) => (
+          {speakers.slice(0, 4).map((speaker, index) => (
             <motion.div
               key={speaker.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="perspective-1000"
+            >
+              <div className="relative w-full h-[320px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
+                <Card className="absolute inset-0 p-6 text-center [backface-visibility:hidden]">
+                  <div className="flex justify-center mb-4">
+                    <Avatar className="w-24 h-24">
+                      <AvatarImage src={speaker.image} alt={speaker.name} />
+                      <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
+                        {speaker.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-1">{speaker.name}</h3>
+                  <p className="text-sm text-muted-foreground mb-1">{speaker.role}</p>
+                  <p className="text-sm font-medium text-accent mb-4">{speaker.company}</p>
+                  <div className="flex gap-3 justify-center">
+                    <button className="text-muted-foreground hover:text-secondary transition-colors">
+                      <LinkedinLogo size={20} weight="fill" />
+                    </button>
+                    <button className="text-muted-foreground hover:text-foreground transition-colors">
+                      <GithubLogo size={20} weight="fill" />
+                    </button>
+                  </div>
+                </Card>
+
+                <Card className="absolute inset-0 p-6 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
+                  <img 
+                    src={speaker.logo} 
+                    alt={`${speaker.company} logo`}
+                    className="w-full h-auto max-h-32 object-contain"
+                  />
+                </Card>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-6">
+          {speakers.slice(4).map((speaker, index) => (
+            <motion.div
+              key={speaker.name}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: (index + 4) * 0.1 }}
               className="perspective-1000"
             >
               <div className="relative w-full h-[320px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
