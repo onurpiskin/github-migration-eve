@@ -132,7 +132,7 @@ export default function Speakers() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-6">
           {speakers.slice(4).map((speaker, index) => (
             <motion.div
               key={speaker.name}
@@ -141,34 +141,34 @@ export default function Speakers() {
               transition={{ duration: 0.5, delay: (index + 4) * 0.1 }}
               className="perspective-1000"
             >
-              <div className="relative w-full h-[320px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
-                <Card className="absolute inset-0 p-6 text-center [backface-visibility:hidden]">
-                  <div className="flex justify-center mb-4">
-                    <Avatar className="w-24 h-24">
+              <div className="relative w-full h-[240px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
+                <Card className="absolute inset-0 p-4 text-center [backface-visibility:hidden]">
+                  <div className="flex justify-center mb-3">
+                    <Avatar className="w-16 h-16">
                       <AvatarImage src={speaker.image} alt={speaker.name} />
-                      <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
+                      <AvatarFallback className={`${speaker.color} text-lg font-semibold`}>
                         {speaker.initials}
                       </AvatarFallback>
                     </Avatar>
                   </div>
-                  <h3 className="text-lg font-semibold mb-1">{speaker.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-1">{speaker.role}</p>
-                  <p className="text-sm font-medium text-accent mb-4">{speaker.company}</p>
-                  <div className="flex gap-3 justify-center">
+                  <h3 className="text-base font-semibold mb-1">{speaker.name}</h3>
+                  <p className="text-xs text-muted-foreground mb-1">{speaker.role}</p>
+                  <p className="text-xs font-medium text-accent mb-3">{speaker.company}</p>
+                  <div className="flex gap-2 justify-center">
                     <button className="text-muted-foreground hover:text-secondary transition-colors">
-                      <LinkedinLogo size={20} weight="fill" />
+                      <LinkedinLogo size={18} weight="fill" />
                     </button>
                     <button className="text-muted-foreground hover:text-foreground transition-colors">
-                      <GithubLogo size={20} weight="fill" />
+                      <GithubLogo size={18} weight="fill" />
                     </button>
                   </div>
                 </Card>
 
-                <Card className="absolute inset-0 p-6 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
+                <Card className="absolute inset-0 p-4 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
                   <img 
                     src={speaker.logo} 
                     alt={`${speaker.company} logo`}
-                    className="w-full h-auto max-h-32 object-contain"
+                    className="w-full h-auto max-h-20 object-contain"
                   />
                 </Card>
               </div>
