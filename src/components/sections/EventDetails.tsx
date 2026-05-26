@@ -128,7 +128,7 @@ export default function EventDetails() {
               What to Expect
             </h3>
             
-            <div className="flex flex-wrap gap-3 justify-center mb-8">
+            <div className="flex flex-wrap justify-center gap-3 mb-10" aria-label="Event formats">
               {formats.map((format, index) => (
                 <motion.div
                   key={format}
@@ -139,35 +139,36 @@ export default function EventDetails() {
                     delay: 0.6 + (index * 0.08),
                     ease: [0.22, 1, 0.36, 1]
                   }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 >
-                  <div className="px-5 py-2.5 rounded-full bg-gradient-to-r from-accent/10 to-secondary/10 border border-accent/20 text-sm font-medium text-foreground/90 hover:border-accent/40 hover:shadow-md hover:shadow-accent/10 transition-all duration-300">
+                  <div className="cursor-default rounded-md border border-border/70 bg-muted/50 px-4 py-2 text-sm font-medium text-muted-foreground shadow-none">
                     {format}
                   </div>
                 </motion.div>
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex flex-col items-center gap-2">
+            <div className="mx-auto mb-8 h-px w-full max-w-lg bg-border/80" />
+
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex w-full max-w-xl flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
                 <Button 
                   size="lg" 
-                  className="rounded-full px-8 py-6 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="min-h-12 rounded-full px-8 text-base font-semibold shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:min-w-44"
                   onClick={() => window.open('https://forms.office.com/Pages/DesignPageV2.aspx?origin=RevampFRE&subpage=design&id=v4j5cvGGr0GRqy180BHbR7-_Ey3GyI1GgFpm0Eq6nfVUN0xWRjdDRVc5WjlEMUw0RkRYWkpERjVVUC4u&topview=Prefill', '_blank', 'noopener,noreferrer')}
                 >
                   Register Now
                 </Button>
-                <span className="text-xs font-medium text-muted-foreground">Limited Seats Available</span>
+                
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="min-h-12 rounded-full border-2 px-8 text-base font-semibold transition-all duration-300 hover:scale-105 hover:bg-accent/5 sm:min-w-56"
+                  onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Full Agenda
+                </Button>
               </div>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="rounded-full px-8 py-6 text-base font-semibold border-2 hover:bg-accent/5 transition-all duration-300 hover:scale-105"
-                onClick={() => document.getElementById('agenda')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                View Full Agenda
-              </Button>
+              <span className="text-sm font-medium text-muted-foreground">Limited Seats Available</span>
             </div>
           </div>
         </motion.div>

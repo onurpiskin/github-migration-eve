@@ -102,23 +102,23 @@ export default function Agenda() {
                   initial={{ opacity: 0, x: -30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative pl-16 md:pl-24 pb-12 last:pb-0"
+                  className="relative pl-12 pb-10 sm:pl-16 md:pl-24 md:pb-12 last:pb-0"
                 >
                   <div className="absolute left-0 md:left-8 top-0 w-0 h-0 -translate-x-1/2">
-                    <div className={`w-12 h-12 rounded-full bg-card flex items-center justify-center shadow-sm ${
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-card flex items-center justify-center shadow-sm ${
                       item.isMainSession 
                         ? `border-2 ${item.borderColor} bg-gradient-to-br ${item.gradient}` 
                         : 'border-2 border-border'
                     }`}>
                       <Icon 
-                        size={item.isMainSession ? 24 : 20} 
+                        size={item.isMainSession ? 22 : 18} 
                         className={item.color} 
                         weight={item.isMainSession ? "fill" : "duotone"} 
                       />
                     </div>
                   </div>
 
-                  <div className={`rounded-lg p-6 transition-all ${
+                  <div className={`rounded-lg p-4 transition-all sm:p-6 ${
                     item.isMainSession 
                       ? `bg-gradient-to-br ${item.gradient} border-2 ${item.borderColor} hover:shadow-lg hover:scale-[1.02]` 
                       : 'bg-card border border-border hover:shadow-md hover:border-accent/30'
@@ -127,7 +127,7 @@ export default function Agenda() {
                       <h3 className={`${item.isMainSession ? 'text-xl md:text-2xl' : 'text-xl'} font-semibold`}>
                         {item.title}
                       </h3>
-                      <div className={`text-sm font-medium px-3 py-1 rounded-md w-fit ${
+                      <div className={`w-fit whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium ${
                         item.isMainSession 
                           ? `${item.color} bg-card/80 border ${item.borderColor}` 
                           : 'text-muted-foreground bg-muted'

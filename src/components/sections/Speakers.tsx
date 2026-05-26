@@ -2,9 +2,12 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Card } from '@/components/ui/card'
-import { LinkedinLogo, GithubLogo } from '@phosphor-icons/react'
-import tillSpindlerImg from '@/assets/images/till-spindler.jpg'
-import onurPiskinImg from '@/assets/images/onur-piskin.jpg'
+import arturSpethImg from '@/assets/images/artur.jpeg'
+import juliaKordickImg from '@/assets/images/ai-julia.png'
+import tillSpindlerImg from '@/assets/images/till.jpeg'
+import magnusTimnerImg from '@/assets/images/magnus.jpeg'
+import federicaIorisImg from '@/assets/images/federica.jpeg'
+import onurPiskinImg from '@/assets/images/onur.png'
 import microsoftLogo from '@/assets/images/microsoft-logo.svg'
 import githubLogo from '@/assets/images/github-logo.svg'
 import eficodeLogo from '@/assets/images/eficode-logo.svg'
@@ -17,16 +20,16 @@ const speakers = [
     company: 'Microsoft',
     initials: 'AS',
     color: 'bg-secondary/20',
-    image: undefined,
+    image: arturSpethImg,
     logo: microsoftLogo
   },
   {
     name: 'Julia Kordick',
-    role: 'Solution Engineer',
+    role: 'Solution Engineer GBB',
     company: 'GitHub',
     initials: 'JK',
     color: 'bg-accent/20',
-    image: undefined,
+    image: juliaKordickImg,
     logo: githubLogo
   },
   {
@@ -44,7 +47,7 @@ const speakers = [
     company: 'Solidify/Eficode',
     initials: 'MT',
     color: 'bg-primary/20',
-    image: undefined,
+    image: magnusTimnerImg,
     logo: eficodeLogo
   },
   {
@@ -53,7 +56,7 @@ const speakers = [
     company: 'GitHub',
     initials: 'FI',
     color: 'bg-accent/20',
-    image: undefined,
+    image: federicaIorisImg,
     logo: githubLogo
   },
   {
@@ -89,90 +92,36 @@ export default function Speakers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-          {speakers.slice(0, 4).map((speaker, index) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+          {speakers.map((speaker, index) => (
             <motion.div
               key={speaker.name}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="perspective-1000"
+              className="h-full"
             >
-              <div className="relative w-full h-[320px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
-                <Card className="absolute inset-0 p-6 text-center [backface-visibility:hidden]">
-                  <div className="flex justify-center mb-4">
-                    <Avatar className="w-24 h-24">
-                      <AvatarImage src={speaker.image} alt={speaker.name} />
-                      <AvatarFallback className={`${speaker.color} text-2xl font-semibold`}>
-                        {speaker.initials}
-                      </AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-1">{speaker.name}</h3>
-                  <p className="text-sm text-muted-foreground mb-1">{speaker.role}</p>
-                  <p className="text-sm font-medium text-accent mb-4">{speaker.company}</p>
-                  <div className="flex gap-3 justify-center">
-                    <button className="text-muted-foreground hover:text-secondary transition-colors">
-                      <LinkedinLogo size={20} weight="fill" />
-                    </button>
-                    <button className="text-muted-foreground hover:text-foreground transition-colors">
-                      <GithubLogo size={20} weight="fill" />
-                    </button>
-                  </div>
-                </Card>
+              <Card className="flex h-full min-h-[310px] flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/5">
+                <div className="flex flex-col items-center">
+                  <Avatar className="mb-5 h-28 w-28 ring-4 ring-background shadow-md">
+                    <AvatarImage src={speaker.image} alt={speaker.name} className="object-cover" />
+                    <AvatarFallback className={`${speaker.color} text-xl font-semibold`}>
+                      {speaker.initials}
+                    </AvatarFallback>
+                  </Avatar>
 
-                <Card className="absolute inset-0 p-6 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
-                  <img 
-                    src={speaker.logo} 
-                    alt={`${speaker.company} logo`}
-                    className="w-full h-auto max-h-32 object-contain"
-                  />
-                </Card>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-6">
-          {speakers.slice(4).map((speaker, index) => (
-            <motion.div
-              key={speaker.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: (index + 4) * 0.1 }}
-              className="perspective-1000"
-            >
-              <div className="relative w-full h-[240px] group [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]">
-                <Card className="absolute inset-0 p-4 text-center [backface-visibility:hidden]">
-                  <div className="flex justify-center mb-3">
-                    <Avatar className="w-16 h-16">
-                      <AvatarImage src={speaker.image} alt={speaker.name} />
-                      <AvatarFallback className={`${speaker.color} text-lg font-semibold`}>
-                        {speaker.initials}
-                      </AvatarFallback>
-                    </Avatar>
+                  <h3 className="mb-2 text-lg font-semibold leading-tight">{speaker.name}</h3>
+                  <p className="mb-2 text-sm text-muted-foreground">{speaker.role}</p>
+                  <div className="flex items-center justify-center gap-2 text-sm font-medium text-accent">
+                    <img 
+                      src={speaker.logo} 
+                      alt={`${speaker.company} logo`}
+                      className="h-6 w-auto max-w-20 shrink-0 object-contain"
+                    />
+                    <span>{speaker.company}</span>
                   </div>
-                  <h3 className="text-base font-semibold mb-1">{speaker.name}</h3>
-                  <p className="text-xs text-muted-foreground mb-1">{speaker.role}</p>
-                  <p className="text-xs font-medium text-accent mb-3">{speaker.company}</p>
-                  <div className="flex gap-2 justify-center">
-                    <button className="text-muted-foreground hover:text-secondary transition-colors">
-                      <LinkedinLogo size={18} weight="fill" />
-                    </button>
-                    <button className="text-muted-foreground hover:text-foreground transition-colors">
-                      <GithubLogo size={18} weight="fill" />
-                    </button>
-                  </div>
-                </Card>
-
-                <Card className="absolute inset-0 p-4 flex items-center justify-center [backface-visibility:hidden] [transform:rotateY(180deg)] bg-card">
-                  <img 
-                    src={speaker.logo} 
-                    alt={`${speaker.company} logo`}
-                    className="w-full h-auto max-h-20 object-contain"
-                  />
-                </Card>
-              </div>
+                </div>
+              </Card>
             </motion.div>
           ))}
         </div>
