@@ -1,23 +1,18 @@
-# ✨ Welcome to Your Spark Template!
-You've just launched your brand-new Spark Template Codespace — everything’s fired up and ready for you to explore, build, and create with Spark!
+# Azure DevOps & GitHub Köln Event
 
-This template is your blank canvas. It comes with a minimal setup to help you get started quickly with Spark development.
+Landing page for the Azure DevOps & GitHub Köln community event.
 
-🚀 What's Inside?
-- A clean, minimal Spark environment
-- Pre-configured for local development
-- Ready to scale with your ideas
-  
-🧠 What Can You Do?
+## Development
 
-Right now, this is just a starting point — the perfect place to begin building and testing your Spark applications.
+This is a Vite + React application.
 
-🧹 Just Exploring?
-No problem! If you were just checking things out and don’t need to keep this code:
+```bash
+npm install
+npm run dev
+```
 
-- Simply delete your Spark.
-- Everything will be cleaned up — no traces left behind.
+## Deployment
 
-📄 License For Spark Template Resources 
+The site is automatically deployed to GitHub Pages when changes are pushed to the `main` branch.
 
-The Spark Template files and resources from GitHub are licensed under the terms of the MIT license, Copyright GitHub, Inc.
+📄 License: MIT
