@@ -9,7 +9,7 @@ const details = [
   {
     icon: CalendarBlank,
     label: 'Date',
-    value: 'June 9, 2026',
+    value: 'September 15, 2026',
     color: 'text-accent'
   },
   {

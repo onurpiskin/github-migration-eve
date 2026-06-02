@@ -82,7 +82,7 @@ export default function CallToAction({ onRegisterClick }: CallToActionProps) {
           </motion.div>
 
           <p className="text-sm mt-6 opacity-75">
-            June 9, 2026 · 12:30 – 17:00 · Microsoft Köln
+            September 15, 2026 · 12:30 – 17:00 · Microsoft Köln
           </p>
         </motion.div>
       </div>

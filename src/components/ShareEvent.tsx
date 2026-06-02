@@ -23,7 +23,7 @@ export default function ShareEvent({ variant = 'ghost', size = 'sm', showLabel =
 
   const eventDetails = {
     title: 'From Azure DevOps to GitHub: Migrate, Integrate & Accelerate with GitHub Copilot',
-    date: 'June 9, 2026',
+    date: 'September 15, 2026',
     location: 'Microsoft Köln, Germany',
     url: typeof window !== 'undefined' ? window.location.href : '',
   }
