@@ -3,41 +3,25 @@ import { Button } from '@/components/ui/button'
 import { ArrowRight } from '@phosphor-icons/react'
 import ShareEvent from '@/components/ShareEvent'
 import CountdownTimer from '@/components/CountdownTimer'
-import CopilotBackground from '@/components/CopilotBackground'
 
 interface HeroProps {
   onRegisterClick: () => void
 }
 
 export default function Hero({ onRegisterClick }: HeroProps) {
-  const eventDate = new Date('2026-06-09T12:30:00')
+  const eventDate = new Date('2026-09-15T12:30:00')
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary">
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: `radial-gradient(circle at 50% 50%, oklch(0.3 0.02 240) 0%, oklch(0.18 0.01 240) 100%)`
-          }}
-        />
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: `radial-gradient(circle, oklch(0.98 0 0 / 0.1) 1px, transparent 1px)`,
-            backgroundSize: '32px 32px'
-          }}
-        />
-        <div 
-          className="absolute inset-0 opacity-30" 
-          style={{
-            background: `radial-gradient(ellipse at top, oklch(0.60 0.15 240 / 0.15) 0%, transparent 60%),
-                         radial-gradient(ellipse at bottom right, oklch(0.68 0.17 145 / 0.1) 0%, transparent 50%)`
-          }}
-        />
-      </div>
-      
-      <CopilotBackground density="medium" variant="dark" />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url('https://github.com/user-attachments/assets/20eac272-67f6-4ff9-a505-846a6e2a735a')`
+        }}
+      />
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="container relative z-10 mx-auto px-4 py-20 md:py-32">
         <motion.div
@@ -54,7 +38,7 @@ export default function Hero({ onRegisterClick }: HeroProps) {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 text-accent-foreground font-medium text-sm backdrop-blur-sm border border-accent/30">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              June 9, 2026 · Köln, Germany
+              September 15, 2026 · Köln, Germany
             </span>
           </motion.div>
 
